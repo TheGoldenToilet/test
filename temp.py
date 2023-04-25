@@ -48,7 +48,12 @@ class User:
     
     def send_client_bound_buffer(self):
         messages_as_list = [i.to_dict() for i in self.client_bound_buffer]
-        self.send_client_bound_message({"Messages": messages_as_list})
+        try:
+            self.send_client_bound_message({"Messages": messages_as_list})
+        except Exception:
+            pass
+        else:
+            self.client_bound_buffer = []
     
     def set_chatting(self, chatting: bool):
         message = Message()
