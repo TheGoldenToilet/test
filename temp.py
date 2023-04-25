@@ -57,7 +57,7 @@ class User:
     
     def set_chatting(self, chatting: bool):
         message = Message()
-        message.type = "set_chatting"
+        message.type = "Set_Chatting"
         message.data = chatting
         self.client_bound_buffer.append(message)
 
