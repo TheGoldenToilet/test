@@ -44,7 +44,7 @@ class User:
         if len(self.long_polls) > 0:
             resolve_long_polls(H_get_message, self.long_polls, as_bytes)
         else:
-            raise Exception("No active long polls no no messages could be sent")
+            raise Exception("No active long polls so no messages could be sent")
     
     def send_client_bound_buffer(self):
         messages_as_list = [i.to_dict() for i in self.client_bound_buffer]
